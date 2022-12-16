@@ -50,7 +50,7 @@ if((middle<=n)&&(array[middle] < array[smallest]))
 if((right <= n) && (array[right] < array[smallest]) ) 
 smallest = right; 
 
-if(largest != i) 
+if(smallest != i) 
 {
 
 int temp = array[i];
