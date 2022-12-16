@@ -39,25 +39,25 @@ private void heap(int [] array, int i)
 int left = left(i);
 int right= right(i);
 int middle=middle(i);
-int largest = i; 
+int smallest = i; 
 
-if((left <= n) && (array[left] > array[largest]) ) 
-largest = left;
+if((left <= n) && (array[left] < array[smallest]) ) 
+smallest = left;
 
-if((middle<=n)&&(array[middle]>array[largest]))
-    largest=middle;
+if((middle<=n)&&(array[middle] < array[smallest]))
+    smallest=middle;
 
-if((right <= n) && (array[right] > array[largest]) ) 
-largest = right; 
+if((right <= n) && (array[right] < array[smallest]) ) 
+smallest = right; 
 
 if(largest != i) 
 {
 
 int temp = array[i];
-array[i] = array[largest];
-array[largest] = temp;
+array[i] = array[smallest];
+array[smallest] = temp;
 
-heap(array,largest);
+heap(array,smallest);
 }
 }
 
